@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjjv1fk0rgpse"]
+
+[ext_resource type="FontFile" uid="uid://d0yaeqqerhgqm" path="res://Scripts/BitFontMakerSporty.ttf" id="1_jrr42"]
+[ext_resource type="Script" path="res://Scripts/dolphin.gd" id="1_yhgue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yw75"]
+bg_color = Color(0.000517908, 0.00841649, 0.000568138, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.996078, 0.972549, 0.980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37b43"]
+
+[node name="DolphinTextBox" type="CanvasLayer"]
+script = ExtResource("1_yhgue")
+
+[node name="TextboxContainer" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_right = 589.0
+grow_vertical = 0
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_bottom = 35
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2yw75")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
+modulate = Color(0.235294, 0.411765, 0.388235, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_37b43")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_jrr42")
+theme_override_font_sizes/font_size = 23
+text = "^_"
+
+[node name="label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_jrr42")
+theme_override_font_sizes/font_size = 23
+text = "Welcome to the Ocean Laboratory. My name is Dolph and I shall guide you thorugh this treacherous land . . ."
+autowrap_mode = 3
+clip_text = true
+
+[node name="end" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_jrr42")
+theme_override_font_sizes/font_size = 23
+text = "#"
